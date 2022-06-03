@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS sleuth;
+CREATE DATABASE sleuth;
+USE sleuth;

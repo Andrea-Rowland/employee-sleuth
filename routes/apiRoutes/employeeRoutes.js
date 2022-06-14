@@ -3,9 +3,9 @@ const router = express.Router();
 const db = require('../../db/connection');
 const inputCheck = require('../../utils/inputCheck');
 
-// View all departments
-router.get('/api/departments', (req, res) => {
-    const sql = `SELECT * FROM departments`;
+// View all employees
+router.get('/api/employees', (req, res) => {
+    const sql = `SELECT * FROM employees`;
     db.query(sql, (err, rows) => {
         if (err) {
             res.status(500).json({ error: err.message });
@@ -18,26 +18,33 @@ router.get('/api/departments', (req, res) => {
     });
 });
 
-// Add a department
-router.post('/department', ({ body }, res) => {
+
+// Add an employee
+router.post('/employee', ({ body }, res) => {
     const errors = InputCheck(
         body,
         'id',
-        'name'
+        'first_name',
+        'last_name',
+        'role_id',
+        'manager_id'
     );
     if (errors) {
         res.status(400).json({ error: errors });
         return;
     }
-    const sql = `INSERT INTO departments (id, name)
-    VALUES (?,?)`;
+    const sql = `INSERT INTO employees (id, first_name, last_name, role_id, manager_id)
+    VALUES (?,?,?,?,?)`;
     const params = [
         body.id,
-        body.name
+        body.first_name,
+        body.last_name,
+        body.role_id,
+        body.manager_id
     ];
     db.query(sql, params, (err, result) => {
         if (err) {
-            res.status(400).json({ error: err.message });
+            res.status(400).json({ error: err.message })
             return;
         }
         res.json({
@@ -46,3 +53,6 @@ router.post('/department', ({ body }, res) => {
         });
     });
 });
+
+
+// Update an employee

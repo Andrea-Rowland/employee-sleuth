@@ -30,23 +30,24 @@ inquirer
           'update an employee']
     },
   ])
-  .then(answers => {
-    console.info('Answer:', answers.viewType);
+  //TA helped with this and I don't think it's correct
+  // .then(answers => {
+  //   console.info('Answer:', answers.viewType);
 
-    if (answers.viewType === 'view all departments'){
-        con.query('Select * from departments', function(err, result) {
-            if(err) throw err;
-            console.info(result);
-        })
-    } else if (answers.viewType === 'view all roles'){
-        con.query('Select * from roles', function(err, result) {
-            if(err) throw err;
-            console.info(result);
-        })
-    } else if (answers.viewType === 'view all employees'){
-        con.query('Select * from employees', function(err, result) {
-            if(err) throw err;
-            console.info(result);
-        })
-    }
-    })
+  //   if (answers.viewType === 'view all departments'){
+  //       con.query('Select * from departments', function(err, result) {
+  //           if(err) throw err;
+  //           console.info(result);
+  //       })
+  //   } else if (answers.viewType === 'view all roles'){
+  //       con.query('Select * from roles', function(err, result) {
+  //           if(err) throw err;
+  //           console.info(result);
+  //       })
+  //   } else if (answers.viewType === 'view all employees'){
+  //       con.query('Select * from employees', function(err, result) {
+  //           if(err) throw err;
+  //           console.info(result);
+  //       })
+  //   }
+  //   })

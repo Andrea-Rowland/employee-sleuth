@@ -30,6 +30,10 @@ inquirer
           'update an employee']
     },
   ])
+
+  // SWITCH CASE LOGIC?
+
+  
   //TA helped with this and I don't think it's correct
   // .then(answers => {
   //   console.info('Answer:', answers.viewType);

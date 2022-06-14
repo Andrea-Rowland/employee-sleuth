@@ -1,5 +1,6 @@
 
 var mysql = require('mysql2');
+var util = require('util');
 
 var con = mysql.createConnection({
   host: "localhost",
@@ -13,3 +14,7 @@ con.connect(function(err) {
   
 });
 
+
+con.query = util.promisify(con.query);
+
+module.exports = con;

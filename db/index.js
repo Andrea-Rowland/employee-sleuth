@@ -13,24 +13,24 @@ class DB {
         return this.con.query("SELECT * FROM departments")
     }
 
-    findALLRoles(){
+    findAllRoles(){
         return this.con.query("SELECT * FROM roles")
     }
 
-    createEmp(){
-        return this.con.query("INSERT INTO employees")
+    createEmp(employee){
+        return this.con.query("INSERT INTO employees SET ?",employee)
     }
 
-    createDept(){
-        return this.con.query("INSERT INTO departments")
+    createDept(department){
+        return this.con.query("INSERT INTO departments SET ?", department)
     }
 
-    createRole(){
-        return this.con.query("INSERT INTO roles")
+    createRole(role){
+        return this.con.query("INSERT INTO roles SET ?", role)
     }
 
     updateEmp(){
-        return this.con.query("UPDATE employees SET role_id = ?")
+        return this.con.query("UPDATE employees SET role_id = ? Where id = ?")
     }
 
     deleteDept(){

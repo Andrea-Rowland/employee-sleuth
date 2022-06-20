@@ -17,6 +17,8 @@ You will be presented with option to view all departments, roles or employees, o
 
 ## Video Submission
 
+https://drive.google.com/file/d/1_OXsgvvOts1CZHvraqHfmiqHxDoBqy59/view
+
 ## Questions
 Questions about this project? Reach out to me at: andreadhaag@gmail.com
 
